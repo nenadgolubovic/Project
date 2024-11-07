@@ -4,6 +4,7 @@
 (def http-call "https://api.schiphol.nl/public-flights/flights?includedelays=false&page=0&sort=%2BscheduleTime")
 (defn api-shipol
   []
+
   (let [url (client/get http-call)
         headers {"Accept" "application/json"
                  "app_id" "82405ed0"
