@@ -12,3 +12,5 @@
   []
   (let [response (client/get http-call {:headers params})]
     response))
+
+(def a 5)
