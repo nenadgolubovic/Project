@@ -3,7 +3,7 @@
   (:require [ApiController.api-config :as api-config])
   )
 
-(defn connect-api-schipol
+(defn connect-api-schipol-airport
   []
   (let [response (client/get api-config/http-call {:headers api-config/params})]
     response))
