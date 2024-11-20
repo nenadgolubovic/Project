@@ -15,10 +15,12 @@
    {:reservation-number "112" :flight-number "AA123" :departure "2024-11-25" :origin "Belgrade" :destination "Los Angeles" :status "On Time"}
    {:reservation-number "113" :flight-number "AA123" :departure "2024-11-25" :origin "Belgrade" :destination "Los Angeles" :status "On Time"}
    {:reservation-number "123" :flight-number "BB456" :departure "2024-11-26" :origin "Frankfurt" :destination "Belgrade" :status "Delayed"}
-   {:reservation-number "124" :flight-number "CC789" :departure "2024-11-27" :origin "London" :destination "Las Vegas" :status "Cancelled"}])
+   {:reservation-number "124" :flight-number "CC789" :departure "2024-11-27" :origin "London" :destination "Las Vegas" :status "Cancelled"}
+   {:reservation-number "211" :flight-number "CC789" :departure "2024-12-27" :origin "London" :destination "Las Vegas" :status "Cancelled"}
+   {:reservation-number "212" :flight-number "CC789" :departure "2024-11-13" :origin "London" :destination "Las Vegas" :status "Cancelled"}])
 
 ;Function which looking for flights based on reservation-number
-(defn find-flight [reservation-number]
+(defn find-flight-by-reservation-number [reservation-number]
   (some #(if (= (:reservation-number %) reservation-number) %) flights))
 
 ;Function which display info of flight
@@ -33,4 +35,10 @@
         (println "Flight not found."))))
 
 ;2. The user enters the destination and flight time so that the program will recommend the flight time to avoid the biggest delay and potentially be late to the arrival destination
+
+(defn find-flight-by-route [origin destination]
+  (filter #(if (and (= (:origin %) origin) (= (:destination %) destination))
+           %) flights))
+
+
 
