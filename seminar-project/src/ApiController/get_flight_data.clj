@@ -1,4 +1,4 @@
-(ns ApiController.api-requests
+(ns ApiController.get-flight-data
   (:require [clj-http.client :as client])
   (:require [ApiController.api-config :as api-config])
   )
@@ -7,3 +7,4 @@
   []
   (let [response (client/get api-config/http-call {:headers api-config/params})]
     response))
+
