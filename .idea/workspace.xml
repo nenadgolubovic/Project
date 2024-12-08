@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08ac5935-cfa1-4984-bb14-a7c47cd6d331" name="Changes" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/seminar-project/src/api_controller/api_config.clj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seminar-project/src/db/config.clj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seminar-project/test/seminar_project/db_connection_test.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seminar-project/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/seminar-project/project.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seminar-project/src/services/impact_flight.clj" beforeDir="false" afterPath="$PROJECT_DIR$/seminar-project/src/services/impact_flight.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seminar-project/seminar-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/seminar-project/seminar-project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seminar-project/src/ApiController/api_config.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seminar-project/src/ApiController/get_flight_data.clj" beforeDir="false" afterPath="$PROJECT_DIR$/seminar-project/src/api_controller/get_flight_data.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seminar-project/src/db/connection.clj" beforeDir="false" afterPath="$PROJECT_DIR$/seminar-project/src/db/connection.clj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Clojure Namespace" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -47,17 +55,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Clojure REPL.REPL.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "cursive.last.file.extension.C\\:/Users/Nikola/Desktop/Nenad/Alati i Metode Vestacke Inteligencije i Softverskog Inzenjerstva/Seminarski/seminar-project/src": "clj",
-    "git-widget-placeholder": "nenad-Dev",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Nikola/OneDrive/Radna površina/Nenad/Alati i Metode Vestacke Inteligencije i Softverskog Inzenjerstva/Seminarski"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Clojure REPL.REPL.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;cursive.last.file.extension.C\\:/Users/Nikola/Desktop/Nenad/Alati i Metode Vestacke Inteligencije i Softverskog Inzenjerstva/Seminarski/seminar-project/src&quot;: &quot;clj&quot;,
+    &quot;cursive.last.file.extension.C\\:/Users/Nikola/OneDrive/Radna povr\\u0161ina/Nenad/Alati i Metode Vestacke Inteligencije i Softverskog Inzenjerstva/Seminarski/seminar-project/src&quot;: &quot;clj&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;nenad-Dev&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nikola/OneDrive/Radna površina/Nenad/Alati i Metode Vestacke Inteligencije i Softverskog Inzenjerstva/Seminarski&quot;
   }
-}]]></component>
-  <component name="ReplState" timestamp="1733425486904">{:repl-history {:ide [], :local [{:command &quot;(defproject seminar-project \&quot;0.1.0-SNAPSHOT\&quot;\n  :description \&quot;FIXME: write description\&quot;\n  :url \&quot;http://example.com/FIXME\&quot;\n  :license {:name \&quot;EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0\&quot;\n            :url \&quot;https://www.eclipse.org/legal/epl-2.0/\&quot;}\n  :dependencies [[org.clojure/clojure \&quot;1.11.1\&quot;] [clj-http \&quot;3.12.3\&quot;]]\n  :repl-options {:init-ns seminar-project.core})&quot;, :offset 374, :ns &quot;user&quot;} {:command &quot;(ns ApiController.api-config)&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(def http-call \&quot;https://api.schiphol.nl/public-flights/flights?includedelays=false&amp;page=0&amp;sort=%2BscheduleTime\&quot;)&quot;, :offset 112, :ns &quot;ApiController.api-config&quot;} {:command &quot;(def params {:Accept \&quot;application/json\&quot;\n             :app_id \&quot;82405ed0\&quot;\n             :app_key \&quot;9d7ffea2adf25591b3b527d5a61b761d\&quot;\n             :ResourceVersion \&quot;v4\&quot;})&quot;, :offset 165, :ns &quot;ApiController.api-config&quot;} {:command &quot;(ns ApiController.api-requests\n  (:require [clj-http.client :as client])\n  (:require [ApiController.api-config :as api-config])\n  )&quot;, :offset 131, :ns &quot;ApiController.api-requests&quot;} {:command &quot;(defn connect-api-schipol-airport\n  []\n  (let [response (client/get api-config/http-call {:headers api-config/params})]\n    response))&quot;, :offset 134, :ns &quot;ApiController.api-requests&quot;} {:command &quot;(ns seminar-project.core\n  (:require [ApiController.api-requests :as api-request]))&quot;, :offset 83, :ns &quot;ApiController.api-requests&quot;} {:command &quot;(api-request/connect-api-schipol-airport)&quot;, :offset 41, :ns &quot;seminar-project.core&quot;}], :remote []}}</component>
+}</component>
+  <component name="ReplState" timestamp="1733672098856">{:repl-history {:ide [], :local [{:command &quot;(defproject seminar-project \&quot;0.1.0-SNAPSHOT\&quot;\n  :description \&quot;FIXME: write description\&quot;\n  :url \&quot;http://example.com/FIXME\&quot;\n  :license {:name \&quot;EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0\&quot;\n            :url \&quot;https://www.eclipse.org/legal/epl-2.0/\&quot;}\n  :dependencies [[org.clojure/clojure \&quot;1.11.1\&quot;] [clj-http \&quot;3.12.3\&quot;]]\n  :repl-options {:init-ns seminar-project.core})&quot;, :offset 374, :ns &quot;user&quot;} {:command &quot;(ns ApiController.api-config)&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(def http-call \&quot;https://api.schiphol.nl/public-flights/flights?includedelays=false&amp;page=0&amp;sort=%2BscheduleTime\&quot;)&quot;, :offset 112, :ns &quot;ApiController.api-config&quot;} {:command &quot;(def params {:Accept \&quot;application/json\&quot;\n             :app_id \&quot;82405ed0\&quot;\n             :app_key \&quot;9d7ffea2adf25591b3b527d5a61b761d\&quot;\n             :ResourceVersion \&quot;v4\&quot;})&quot;, :offset 165, :ns &quot;ApiController.api-config&quot;} {:command &quot;(ns ApiController.api-requests\n  (:require [clj-http.client :as client])\n  (:require [ApiController.api-config :as api-config])\n  )&quot;, :offset 131, :ns &quot;ApiController.api-requests&quot;} {:command &quot;(defn connect-api-schipol-airport\n  []\n  (let [response (client/get api-config/http-call {:headers api-config/params})]\n    response))&quot;, :offset 134, :ns &quot;ApiController.api-requests&quot;} {:command &quot;(ns seminar-project.core\n  (:require [ApiController.api-requests :as api-request]))&quot;, :offset 83, :ns &quot;ApiController.api-requests&quot;} {:command &quot;(api-request/connect-api-schipol-airport)&quot;, :offset 41, :ns &quot;seminar-project.core&quot;}], :remote []}}</component>
   <component name="RunManager">
     <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
       <setting name="displayName" value="" />

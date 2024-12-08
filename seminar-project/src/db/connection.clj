@@ -1,13 +1,8 @@
 (ns db.connection
-  (:require [next.jdbc :as jdbc]))
-(def db-config
-  {:dbtype "postgresql"
-   :dbname "schipol_flights_db"
-   :host "localhost"
-   :user "postgres"
-   :port 5432
-   :password "nenad123"})
-(def db (jdbc/get-datasource db-config))
+  (:require [next.jdbc :as jdbc])
+  (:require [clojure.edn :as edn]))
+
+(def db (jdbc/get-datasource (:db-config (edn/read-string (slurp "resources/config.edn")))))
 
 ;I am trying to connect database, I will make test table to test connection
 (def create-table-query
