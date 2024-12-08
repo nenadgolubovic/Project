@@ -22,9 +22,9 @@
 
 
 ;define gates, take available-on which present time when this will be available, open-on, time when gate is open, closed-on present time when it is closed
-(def gates {:gate1 {:available-on 6 :open-on 1 :closed-on 10}
-            :gate2 {:available-on 5 :open-on 1 :closed-on 10}
-            :gate3 {:available-on 5 :open-on 1 :closed-on 10}
+(def gates {:gate1 {:available-on 1 :open-on 1 :closed-on 10}
+            :gate2 {:available-on 1 :open-on 1 :closed-on 10}
+            :gate3 {:available-on 1 :open-on 1 :closed-on 10}
             })
 
 
@@ -42,15 +42,13 @@
 (defn find-gate
   "Function will find gate which are available on actual arrival time, If not find, take gate which has less available on time (first which will be free)"
   [max-available m]
-  (let [gate (some #(when (<= (:available-on (val %)) max-available) (key %)) m)]
+  [(let [gate (some #(when (<= (:available-on (val %)) max-available) (key %)) m)]
     (if gate
       gate
-      (key (apply min-key #(get (val %) :available-on) m)))))
+      (key (apply min-key #(get (val %) :available-on) m))))])
 
 
 (find-gate 3 gates)
-
-
 
 
 (defn assign-gate-to-flight
@@ -66,7 +64,7 @@
 (defn find-gate-for-all-flights
   [gates flights]
   (into {} (map (fn [[k v]]
-                  [k (assign-gate-to-flight gates v)]) ; samo prosleđuješ vrednost
+                  [k (assign-gate-to-flight gates v)])
                 flights)))
 
 (find-gate-for-all-flights gates flights)
