@@ -10,6 +10,4 @@
   (let [response (client/get (:api-url (edn/read-string (slurp "resources/config.edn"))) {:headers (:api-params (edn/read-string (slurp "resources/config.edn")))})]
     response))
 
-c
-
 
